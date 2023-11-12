@@ -1,0 +1,35 @@
+---
+export enum LinkType {
+    Default = "underline",
+    Primary = "p-4 bg-gray-600 text-white font-heading border border-white rounded",
+    Secondary = "px-4 py-2 bg-white text-gray-600 font-heading border border-gray-600 rounded",
+    Success = "success",
+    Danger = "danger",
+}
+
+interface Props {
+    class?: string;
+    type?: LinkType;
+    href?: string;
+    target?: string;
+    disabled?: boolean;
+}
+
+const {
+    class: classOverride,
+    disabled = true,
+    href,
+    target,
+    type = LinkType.Default,
+} = Astro.props;
+
+const anchorClass = classNames(type, classOverride);
+
+function classNames(...classes: (string | undefined)[]) {
+    return classes.filter(Boolean).join(" ");
+}
+---
+
+<a class={`inline-block ${anchorClass}`} href={href} target={target} aria-disabled={disabled}>
+    <slot />
+</a>

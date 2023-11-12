@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import HeroBlock from "@components/HeroBlock.astro";
+import Layout from "../layouts/Layout.astro";
+import heroImage1 from "../assets/images/pexels-pixabay-207896.jpg";
+import Heading, { HeadingColor, HeadingType } from "@components/Heading.astro";
+import Paragraph, { ParagraphColor } from "@components/Paragraph.astro";
+import Link, { LinkType } from "@components/Link.astro";
+import logo from "../assets/images/FOD-logo.png";
+---
+
+<Layout title="Friends of Donegal">
+    <HeroBlock image={heroImage1} imageAltText="People standing in the horizon">
+        <div class="flex flex-col justify-end h-screen">
+            <div class="p-16 pb-40 pt-48 bg-gradient-to-t from-black from-50%">
+                <div class="flex">
+                    <div class="my-auto max-w-[200px] flex-none">
+                        <Image src={logo} width={250} height={250} alt={"FOD logo"} />
+                    </div>
+                    <div class="pl-16 my-auto">
+                        <Heading type={HeadingType.H1} color={HeadingColor.White}>
+                            Friends of Donegal
+                        </Heading>
+                        <Paragraph color={ParagraphColor.White}>
+                            Friends of Donegal is a member of the Donegal School District Community
+                            Partnership Program.
+                        </Paragraph>
+                        <Link type={LinkType.Secondary} class="mt-4" href="/donate">Donate</Link></div>
+                </div>
+            </div>
+        </div>
+    </HeroBlock>
+    <HeroBlock image={heroImage1} imageAltText="People standing in the horizon">
+        <div class="pl-8 pt-[64px]">
+            <Heading type={HeadingType.H2} color={HeadingColor.White}>Programs</Heading>
+            <Paragraph color={ParagraphColor.White}>
+                Friends of Donegal is a member of the Donegal School District Community Partnership
+                Program.
+            </Paragraph>
+        </div>
+    </HeroBlock>
+</Layout>

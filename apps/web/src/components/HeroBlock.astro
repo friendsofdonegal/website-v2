@@ -1,0 +1,41 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+export enum HeroBlockType {
+    Full = "w-full h-screen",
+}
+
+export enum HeroBlockColor {
+    One = "bg-primary-500",
+    Two = "bg-primary-600",
+}
+
+interface Props {
+    bgColorOne?: string;
+    bgColorTwo?: string;
+    type?: HeroBlockType;
+    image?: ImageMetadata;
+    imageAltText?: string;
+}
+
+const { type = HeroBlockType.Full, image, imageAltText } = Astro.props;
+---
+
+<div class={type}>
+    <div class="absolute w-full">
+        {
+            image && (
+                <Image
+                    src={image}
+                    alt={imageAltText}
+                    width="1960"
+                    class="h-screen w-full object-cover"
+                />
+            )
+        }
+    </div>
+    <div class="relative">
+        <slot />
+    </div>
+</div>
