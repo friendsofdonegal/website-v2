@@ -1,42 +1,64 @@
 ---
-import { Image } from "astro:assets";
-import HeroBlock from "@components/HeroBlock.astro";
 import Layout from "../layouts/Layout.astro";
-import heroImage1 from "../assets/images/pexels-pixabay-207896.jpg";
-import Heading, { HeadingColor, HeadingType } from "@components/Heading.astro";
-import Paragraph, { ParagraphColor } from "@components/Paragraph.astro";
-import Link, { LinkType } from "@components/Link.astro";
-import logo from "../assets/images/FOD-logo.png";
+import HeroBlock, { ImagePosition } from "../components/HeroBlock.astro";
+import Heading, { HeadingType, HeadingColor } from "../components/Heading.astro";
+import Paragraph, { ParagraphColor } from "../components/Paragraph.astro";
+import powerPacks from "../assets/images/power_packs.jpg";
+import gettingAhead from "../assets/images/gettingAhead.jpg";
 ---
 
 <Layout title="Friends of Donegal">
-    <HeroBlock image={heroImage1} imageAltText="People standing in the horizon">
-        <div class="flex flex-col justify-end h-screen">
-            <div class="p-16 pb-40 pt-48 bg-gradient-to-t from-black from-50%">
-                <div class="flex">
-                    <div class="my-auto max-w-[200px] flex-none">
-                        <Image src={logo} width={250} height={250} alt={"FOD logo"} />
-                    </div>
-                    <div class="pl-16 my-auto">
-                        <Heading type={HeadingType.H1} color={HeadingColor.White}>
-                            Friends of Donegal
+    <div class="w-full shadow-inner">
+        <div
+            class="font-body p-12 text-center text-3xl font-thin italic text-blue-700 md:container md:mx-auto">
+            We harness the collective power and influence of the community to improve the lives of
+            our neighbors.
+        </div>
+    </div>
+    <div class="mx-2">
+        <HeroBlock
+            height="h-[300px] md:h-[450px]"
+            image={gettingAhead}
+            imageAltText="Getting ahead award ceremony group picture">
+            <div class="my-auto h-full bg-green-900">
+                <div class="flex md:container md:mx-auto">
+                    <div class="my-auto px-16 pb-8 pt-12">
+                        <Heading type={HeadingType.H2} color={HeadingColor.White}>
+                            Getting Ahead
                         </Heading>
                         <Paragraph color={ParagraphColor.White}>
-                            Friends of Donegal is a member of the Donegal School District Community
-                            Partnership Program.
+                            The Getting Ahead program is a 12 week course where individuals explore
+                            the theory of change while investigating their lives and their
+                            community. <a class="font-semibold underline" href="/about"
+                                >Learn more</a
+                            >
                         </Paragraph>
-                        <Link type={LinkType.Secondary} class="mt-4" href="/donate">Donate</Link></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </HeroBlock>
-    <HeroBlock image={heroImage1} imageAltText="People standing in the horizon">
-        <div class="pl-8 pt-[64px]">
-            <Heading type={HeadingType.H2} color={HeadingColor.White}>Programs</Heading>
-            <Paragraph color={ParagraphColor.White}>
-                Friends of Donegal is a member of the Donegal School District Community Partnership
-                Program.
-            </Paragraph>
-        </div>
-    </HeroBlock>
+        </HeroBlock>
+        <HeroBlock
+            height="h-[300px] md:h-[450px]"
+            image={powerPacks}
+            imageAltText="Power packs"
+            imagePosition={ImagePosition.Right}>
+            <div class="my-auto h-full bg-blue-950">
+                <div class="flex md:container md:mx-auto">
+                    <div class="my-auto px-16 pb-8 pt-12">
+                        <Heading type={HeadingType.H2} color={HeadingColor.White}>
+                            Power Packs
+                        </Heading>
+                        <Paragraph color={ParagraphColor.White}>
+                            The Donegal PowerPacks project provides weekly meals and nutritional
+                            education to eligible families so that children thrive and return to
+                            school, well-fed and ready to learn. <a
+                                class="font-semibold underline"
+                                href="/about">Learn more</a
+                            >
+                        </Paragraph>
+                    </div>
+                </div>
+            </div>
+        </HeroBlock>
+    </div>
 </Layout>

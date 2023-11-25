@@ -1,4 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import { Button } from "@fod/ui/components";
+import logo from "../assets/images/FOD-logo-white.png";
+import "../styles/tailwind.css";
+import "@fod/ui/styles.css";
+import "@fontsource/inter";
+
 interface Props {
     title: string;
 }
@@ -17,6 +24,69 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <slot />
+        <div class="header">
+            <div class="header__content">
+                <a href="/"><Image src={logo} alt="FOD logo" class="my-2 w-24 mix-blend-screen" /></a>
+                <ul class="mr-4 flex flex-grow justify-end gap-4">
+                    <li>
+                        <a class="font-semibold" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a class="font-semibold" href="/about">About</a>
+                    </li>
+                </ul>
+                <Button variant="tertiary">Donate</Button>
+            </div>
+        </div>
+        <main>
+            <slot />
+        </main>
+        <div class="footer">
+            <div class="footer__content">
+                <div class="my-12 flex flex-col justify-between gap-12 text-xs sm:flex-row">
+                    <div>
+                        <h6 class="font-bold">Sitemap</h6>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="sm:text-center">
+                        <h6 class="font-bold">Friends of Donegal</h6>
+                        <ul>
+                            <li>Copyright 2023</li>
+                            <li><a href="/about#501c3">501C3 Information</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <Button variant="tertiary">Donate</Button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
+
+<style>
+    body {
+        @apply grid min-h-screen grid-rows-[auto,1fr,auto];
+    }
+
+    .header {
+        @apply border-b border-gray-900 bg-gray-800 text-white shadow-md;
+    }
+
+    .header .header__content {
+        @apply flex items-center px-12 py-2 md:container md:mx-auto;
+    }
+
+    .footer {
+        @apply bg-gray-200 text-gray-800 shadow-inner;
+    }
+
+    .footer .footer__content {
+        @apply px-12 md:container md:mx-auto;
+    }
+</style>

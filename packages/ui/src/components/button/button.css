@@ -1,0 +1,27 @@
+.btn {
+    @apply rounded-md border border-green-950 bg-green-200 px-4 py-1 font-semibold text-black hover:bg-green-950 hover:text-white;
+
+    &.--primary {
+        @apply bg-green-950 text-white;
+    }
+
+    &.--secondary {
+        @apply bg-green-200 text-black;
+    }
+
+    &.--tertiary {
+        @apply bg-green-50 text-green-950 border-green-950;
+    }
+
+    &.--small {
+        @apply px-2 py-1 text-xs;
+    }
+
+    &.--medium {
+        @apply px-4 py-2 text-sm;
+    }
+
+    &.--large {
+        @apply px-6 py-3 text-base;
+    }
+}

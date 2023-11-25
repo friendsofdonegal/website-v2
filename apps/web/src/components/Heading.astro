@@ -14,57 +14,59 @@ export enum HeadingColor {
 }
 
 interface Props {
-    class?: string
+    id?: string;
+    class?: string;
     type: HeadingType;
     color?: HeadingColor;
+    anchor?: string;
 }
 
-const { class: overrideClass, color = HeadingColor.Default, type } = Astro.props;
-
-
+const { id, class: overrideClass, color = HeadingColor.Default, type } = Astro.props;
 ---
 
 <>
     {
         type === HeadingType.H1 && (
-            <h1 class={`lg:text-7xl sm:text-6xl font-bold mb-4 font-heading ${color} ${overrideClass}`}>
+            <h1
+                id={id}
+                class={`font-heading mb-4 font-bold sm:text-6xl lg:text-7xl ${color} ${overrideClass}`}>
                 <slot />
             </h1>
         )
     }
     {
         type === HeadingType.H2 && (
-            <h2 class={`text-2xl font-bold font-heading ${color} ${overrideClass}`}>
+            <h2 id={id} class={`font-heading text-2xl font-bold ${color} ${overrideClass}`}>
                 <slot />
             </h2>
         )
     }
     {
         type === HeadingType.H3 && (
-            <h3 class={`text-xl font-semibold font-heading ${color} ${overrideClass}`}>
+            <h3 id={id} class={`font-heading text-xl font-semibold ${color} ${overrideClass}`}>
                 <slot />
             </h3>
         )
     }
     {
         type === HeadingType.H4 && (
-            <h4 class={`text-xl font-medium font-heading ${color} ${overrideClass}`}>
+            <h4 id={id} class={`font-heading text-xl font-medium ${color} ${overrideClass}`}>
                 <slot />
             </h4>
         )
     }
     {
         type === HeadingType.H5 && (
-            <h5 class={`text-lg font-bold font-heading ${color} ${overrideClass}`}>
+            <h5 id={id} class={`font-heading text-lg font-bold ${color} ${overrideClass}`}>
                 <slot />
-            </h1>
+            </h5>
         )
     }
     {
         type === HeadingType.H6 && (
-            <h6 class={`text-base font-bold font-heading ${color} ${overrideClass}`}>
+            <h6 id={id} class={`font-heading text-base font-bold ${color} ${overrideClass}`}>
                 <slot />
-            </h1>
+            </h6>
         )
     }
 </>

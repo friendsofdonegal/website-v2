@@ -1,3 +1,6 @@
 module.exports = {
-  extends: ["custom/react-internal"],
+  extends: ["custom/react"],
+  rules: {
+    "react/function-component-definition": "off",
+  },
 };

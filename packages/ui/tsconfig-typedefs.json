@@ -1,0 +1,10 @@
+{
+    "extends": "@fod/tsconfig/react-library.json",
+    "compilerOptions": {
+      "noEmit": false,
+      "baseUrl": "./src",
+      "outDir": "dist"
+    },
+    "include": ["src"],
+    "exclude": ["dist", "build", "node_modules"]
+  }
