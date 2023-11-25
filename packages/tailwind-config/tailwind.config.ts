@@ -52,9 +52,9 @@ const config: Config = {
             gray: colors.gray,
         },
         fontFamily: {
-            heading: ["Inter", ...defaultTheme.fontFamily.sans],
-            body: ["Inter", ...defaultTheme.fontFamily.sans],
-            sans: ["Inter", ...defaultTheme.fontFamily.sans],
+            heading: [...defaultTheme.fontFamily.sans],
+            body: [...defaultTheme.fontFamily.sans],
+            sans: [...defaultTheme.fontFamily.sans],
             serif: [...defaultTheme.fontFamily.serif],
         },
         extend: {
