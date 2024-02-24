@@ -8,78 +8,33 @@ const boardMembers = await getCollection("board-members");
 ---
 
 <ContentPageLayout title="About Us">
-    <Heading type={HeadingType.H1}>About Friends of Donegal</Heading>
-
-    <Heading type={HeadingType.H2}>Mission</Heading>
-    <Paragraph>
-        We harness the collective power and influence of the community to improve the lives of our
-        neighbors.
-    </Paragraph>
-
-    <Heading type={HeadingType.H2}>Vision</Heading>
-    <Paragraph>Together we promote hope and equity for all.</Paragraph>
-
-    <Heading type={HeadingType.H2}>Core Values</Heading>
-
-    <Heading type={HeadingType.H3}>Equity</Heading>
-    <Paragraph>
-        We believe everyone should be seen, heard, valued, and empowered to succeed. We work to
-        change practices, structures, and policies to realize equity for everyone.
-    </Paragraph>
-
-    <Heading type={HeadingType.H3}>Making Sustainable Change</Heading>
-    <Paragraph>
-        We are committed to the economic security of all people. Unlike systems that create and
-        maintain disparities, we adopt approaches that meet the individual's needs the way they
-        experience social problems.
-    </Paragraph>
-
-    <Heading type={HeadingType.H3}>Persistent</Heading>
-    <Paragraph>
-        We understand to make sustainable change we must pursue our goals even when it is difficult
-        or opposed by others. We are driven to think and do what is best for those in need in our
-        community.
-    </Paragraph>
-
-    <Heading type={HeadingType.H3}>Opportunity</Heading>
-    <Paragraph>
-        We work with others to create the circumstances for members of our community to thrive.
-    </Paragraph>
-
-    <Heading type={HeadingType.H3}>With</Heading>
-    <Paragraph>We are here to walk with you, team with you and celebrate with you.</Paragraph>
-
-    <Heading type={HeadingType.H3}>Empathy</Heading>
-    <Paragraph>
-        We are genuinely interested in the emotional state of others and engage with those emotions
-        to compassionately take action.
-    </Paragraph>
-
-    <Heading type={HeadingType.H3}>Relationships</Heading>
-    <Paragraph>
-        RelationshipsWe build connections between people and organizations, founded in mutual
-        respect, to work together to bring about change.
-    </Paragraph>
-
-    <Heading type={HeadingType.H2}>Our Board of Directors</Heading>
+    <Heading type={HeadingType.H2} class="mb-8">Meet Our Board of Directors</Heading>
     {
         boardMembers.map((member) => (
             <>
-                <Heading type={HeadingType.H3}>
-                    {member.data.name}
-                    {member.data.title && ` - ${member.data.title}`}
-                </Heading>
-                <Paragraph style={ParagraphStyle.Spaced}>
-                    {member.data.imageUrl && (
-                        <Image
-                            src={member.data.imageUrl}
-                            width={300}
-                            height={400}
-                            alt={`${member.data.name}, ${member.data.title}`}
-                        />
-                    )}
-                    {member.body}
-                </Paragraph>
+                <div class="flex flex-col md:flex-row gap-x-8">
+                    <div class="w-300 h-400 flex-shrink-0">
+                        {member.data.imageUrl && (
+                            <Image
+                                class={"object-contain rounded-2xl"}
+                                src={member.data.imageUrl}
+                                width={300}
+                                height={400}
+                                alt={`${member.data.name}, ${member.data.title}`}
+                            />
+                        )}
+                    </div>
+                    <div>
+                        <Heading type={HeadingType.H3} class="mt-4 mb-0">
+                            {member.data.name}
+                            {member.data.title && ` - ${member.data.title}`}
+                        </Heading>
+                        <Paragraph style={ParagraphStyle.Default}>
+                            {member.body}
+                        </Paragraph>
+                    </div>
+                </div>
+                <hr class="my-8" />
             </>
         ))
     }
