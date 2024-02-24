@@ -15,6 +15,7 @@ const programCollection = defineCollection({
             name: z.string(),
             summary: z.string(),
             image: image(),
+            homepageIndex: z.optional(z.number()),
         }),
 });
 
