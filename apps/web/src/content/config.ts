@@ -5,10 +5,20 @@ const boardMemberCollection = defineCollection({
         z.object({
             name: z.string(),
             title: z.optional(z.string()),
-            imageUrl: image(),
+            imageUrl: z.optional(image()),
+        }),
+});
+
+const programCollection = defineCollection({
+    schema: ({ image }) =>
+        z.object({
+            name: z.string(),
+            summary: z.string(),
+            image: image(),
         }),
 });
 
 export const collections = {
     ["board-members"]: boardMemberCollection,
+    ["programs"]: programCollection,
 };

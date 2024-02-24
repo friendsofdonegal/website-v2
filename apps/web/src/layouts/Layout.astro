@@ -1,15 +1,25 @@
 ---
 import { Image } from "astro:assets";
-import { Button } from "@fod/ui/components";
+import { Button, Header } from "@fod/ui/components";
 import logo from "../assets/images/FOD-logo-white.png";
-import "../styles/tailwind.css";
+import { Breadcrumbs } from "astro-breadcrumbs";
+
 import "@fod/ui/styles.css";
+import "../styles/tailwind.css";
+import "astro-breadcrumbs/breadcrumbs.css";
+
+export type BreadcrumbItem = {
+  text: string;
+  href: string;
+  "aria-current"?: string;
+}
 
 interface Props {
     title: string;
+    breadcrumbs?: Array<BreadcrumbItem>;
 }
 
-const { title } = Astro.props;
+const { breadcrumbs = [], title } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,20 +33,55 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <div class="header">
-            <div class="header__content">
-                <a href="/"><Image src={logo} alt="FOD logo" class="my-2 w-24 mix-blend-screen" /></a>
-                <ul class="mr-4 flex flex-grow justify-end gap-4">
-                    <li>
-                        <a class="font-semibold" href="/">Home</a>
-                    </li>
-                    <li>
-                        <a class="font-semibold" href="/about">About</a>
-                    </li>
-                </ul>
-                <Button variant="tertiary">Donate</Button>
-            </div>
-        </div>
+        <Header
+            client:load
+            menuItems={[
+                { label: "Home", path: "/" },
+                { label: "Programs", path: "/programs" },
+                { label: "About", path: "/about" },
+            ]}>
+            <Image slot="logo" loading="eager" src={logo} alt="FOD logo" class="my-2 w-24" />
+        </Header>
+        {
+            breadcrumbs.length > 0 && (
+                <div class="bg-gray-300 py-2">
+                    <div class="px-12 text-sm font-semibold text-gray-700 md:container md:mx-auto">
+                        <Breadcrumbs crumbs={breadcrumbs} truncated={true}>
+                            <svg
+                                slot="ellipsis"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <>
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="19" cy="12" r="1" />
+                                    <circle cx="5" cy="12" r="1" />
+                                </>
+                            </svg>
+                            <svg
+                                slot="separator"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                        </Breadcrumbs>
+                    </div>
+                </div>
+            )
+        }
         <main>
             <slot />
         </main>
@@ -48,15 +93,14 @@ const { title } = Astro.props;
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li><a href="/about">About</a></li>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/about">About</a></li>
+                            <li><a href="/programs">Programs</a></li>
                         </ul>
                     </div>
                     <div class="sm:text-center">
                         <h6 class="font-bold">Friends of Donegal</h6>
                         <ul>
                             <li>Copyright 2023</li>
-                            <li><a href="/about#501c3">501C3 Information</a></li>
+                            <li><a href="/about#501c3">501(C)3 Information</a></li>
                         </ul>
                     </div>
                     <div>
@@ -70,15 +114,7 @@ const { title } = Astro.props;
 
 <style>
     body {
-        @apply grid min-h-screen grid-rows-[auto,1fr,auto];
-    }
-
-    .header {
-        @apply border-b border-gray-900 bg-gray-800 text-white shadow-md;
-    }
-
-    .header .header__content {
-        @apply flex items-center px-12 py-2 md:container md:mx-auto;
+        @apply grid min-h-screen grid-rows-[auto,1fr,auto] bg-gray-50;
     }
 
     .footer {

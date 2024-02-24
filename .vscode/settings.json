@@ -5,7 +5,7 @@
         }
     ],
     "[astro]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "astro-build.astro-vscode"
     },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -15,5 +15,6 @@
     },
     "tailwindCSS.experimental.classRegex": [
       ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-    ]
+    ],
+    "codevoid.inner-loop-buddy.defaultUrl": "http://localhost:4321"
 }

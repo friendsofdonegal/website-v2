@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import Heading, { HeadingType } from "@components/Heading.astro";
+import Paragraph from "@components/Paragraph.astro";
+import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
+import ProgramCard from "@components/ProgramCard.astro";
+import { Link } from "@fod/ui/components";
+const programs = await getCollection("programs");
+
+const breadcrumbs = [
+    {
+        title: "Home",
+        href: "/",
+    },
+    {
+        title: "Programs",
+        href: "/programs",
+    },
+];
+---
+
+<ContentPageLayout title="Programs" breadcrumbs={breadcrumbs}>
+    <Heading type={HeadingType.H1}>Programs</Heading>
+
+    <div class="grid grid-cols-1 gap-12 pt-8 lg:grid-cols-2">
+        {
+            programs.map((program) => {
+                return (
+                    <ProgramCard image={program.data.image} alt={program.data.name}>
+                        <div class="flex h-full flex-col justify-between px-4 pb-6 pt-4">
+                            <div>
+                                <Heading type={HeadingType.H2}>{program.data.name}</Heading>
+                                <Paragraph>{program.data.summary}</Paragraph>
+                            </div>
+                            <div>
+                                <Link href={`programs/${program.slug.slice(3)}`}>Learn More</Link>
+                            </div>
+                        </div>
+                    </ProgramCard>
+                );
+            })
+        }
+    </div>
+</ContentPageLayout>

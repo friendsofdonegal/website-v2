@@ -1,25 +1,22 @@
 ---
-import Layout from "src/layouts/Layout.astro";
+import Layout, { type BreadcrumbItem } from "src/layouts/Layout.astro";
 
 interface Props {
     title: string;
+    breadcrumbs?: Array<BreadcrumbItem>;
 }
 
-const { title } = Astro.props;
+const { breadcrumbs = [], title } = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={title} breadcrumbs={breadcrumbs}>
     <div class="main">
         <slot />
     </div>
 </Layout>
 
 <style>
-    body {
-        @apply gap-12;
-    }
-
     .main {
-        @apply px-12 md:container md:mx-auto;
+        @apply p-12 md:container md:mx-auto;
     }
 </style>

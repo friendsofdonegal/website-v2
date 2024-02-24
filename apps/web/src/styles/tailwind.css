@@ -3,7 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+    h1 {
+        @apply font-heading mb-4 font-bold text-6xl lg:text-7xl;
+    }
+
+    h2 {
+        @apply font-heading text-2xl font-bold pt-5;
+    }
+
+    h3 {
+        @apply font-heading text-xl font-semibold;
+    }
+
+    h4 {
+        @apply font-heading text-xl font-medium;
+    }
+
+    h5 {
+        @apply font-heading text-lg font-bold;
+    }
+
+    h6 {
+        @apply font-heading text-base font-bold;
+    }
+
     a {
-        @apply text-green-950 hover:underline;
+        @apply text-brand-950 hover:underline;
     }
 }

@@ -70,12 +70,14 @@ const boardMembers = await getCollection("board-members");
                     {member.data.title && ` - ${member.data.title}`}
                 </Heading>
                 <Paragraph style={ParagraphStyle.Spaced}>
-                    <Image
-                        src={member.data.imageUrl}
-                        width={300}
-                        height={400}
-                        alt={`Image of ${member.data.name}, ${member.data.title}`}
-                    />
+                    {member.data.imageUrl && (
+                        <Image
+                            src={member.data.imageUrl}
+                            width={300}
+                            height={400}
+                            alt={`${member.data.name}, ${member.data.title}`}
+                        />
+                    )}
                     {member.body}
                 </Paragraph>
             </>

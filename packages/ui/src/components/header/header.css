@@ -1,0 +1,15 @@
+.header {
+    @apply border-b border-gray-900 bg-brand-800 text-white shadow-md;
+
+    &__content {
+        @apply flex items-center px-12 py-2 md:container md:mx-auto;
+    }
+
+    &__mobile-menu {
+        @apply px-12 pt-0 pb-2 md:container md:mx-auto;
+
+        li {
+            @apply pt-0 pb-2;
+        }
+    }
+}

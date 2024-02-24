@@ -1,36 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroBlock, { ImagePosition } from "../components/HeroBlock.astro";
+import HeroBlock from "../components/HeroBlock.astro";
 import Heading, { HeadingType, HeadingColor } from "../components/Heading.astro";
 import Paragraph, { ParagraphColor } from "../components/Paragraph.astro";
-import powerPacks from "../assets/images/power_packs.jpg";
-import gettingAhead from "../assets/images/gettingAhead.jpg";
+import powerPacks from "../assets/images/programs/power_packs.jpg";
+import gettingAhead from "../assets/images/programs/gettingAhead.jpg";
 ---
 
 <Layout title="Friends of Donegal">
     <div class="w-full shadow-inner">
         <div
-            class="font-body p-12 text-center text-3xl font-thin italic text-blue-700 md:container md:mx-auto">
+            class="font-body p-12 text-center text-3xl font-thin italic text-brand-700 md:container md:mx-auto">
             We harness the collective power and influence of the community to improve the lives of
             our neighbors.
         </div>
     </div>
-    <div class="mx-2">
+    <div>
         <HeroBlock
-            height="h-[300px] md:h-[450px]"
             image={gettingAhead}
             imageAltText="Getting ahead award ceremony group picture">
-            <div class="my-auto h-full bg-green-900">
+            <div class="my-auto h-full bg-blue-600">
                 <div class="flex md:container md:mx-auto">
-                    <div class="my-auto px-16 pb-8 pt-12">
+                    <div class="my-auto px-16 pb-8 pt-6">
                         <Heading type={HeadingType.H2} color={HeadingColor.White}>
                             Getting Ahead
                         </Heading>
                         <Paragraph color={ParagraphColor.White}>
                             The Getting Ahead program is a 12 week course where individuals explore
                             the theory of change while investigating their lives and their
-                            community. <a class="font-semibold underline" href="/about"
-                                >Learn more</a
+                            community. <a
+                                class="font-semibold text-white underline"
+                                href="/programs/getting-ahead">Learn more</a
                             >
                         </Paragraph>
                     </div>
@@ -38,13 +38,13 @@ import gettingAhead from "../assets/images/gettingAhead.jpg";
             </div>
         </HeroBlock>
         <HeroBlock
-            height="h-[300px] md:h-[450px]"
+            imageClass={["object-top"]}
             image={powerPacks}
             imageAltText="Power packs"
-            imagePosition={ImagePosition.Right}>
-            <div class="my-auto h-full bg-blue-950">
+            imagePosition="right">
+            <div class="my-auto h-full bg-teal-800">
                 <div class="flex md:container md:mx-auto">
-                    <div class="my-auto px-16 pb-8 pt-12">
+                    <div class="my-auto px-16 pb-8 pt-6">
                         <Heading type={HeadingType.H2} color={HeadingColor.White}>
                             Power Packs
                         </Heading>
@@ -52,8 +52,8 @@ import gettingAhead from "../assets/images/gettingAhead.jpg";
                             The Donegal PowerPacks project provides weekly meals and nutritional
                             education to eligible families so that children thrive and return to
                             school, well-fed and ready to learn. <a
-                                class="font-semibold underline"
-                                href="/about">Learn more</a
+                                class="font-semibold text-white underline"
+                                href="/programs/donegal-pwer-packs">Learn more</a
                             >
                         </Paragraph>
                     </div>

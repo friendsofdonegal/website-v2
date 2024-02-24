@@ -1,0 +1,53 @@
+---
+import Heading, { HeadingType } from "@components/Heading.astro";
+import Paragraph from "@components/Paragraph.astro";
+import { Link } from "@fod/ui/components";
+
+interface Props {
+    source: string;
+}
+
+const { source } = Astro.props;
+---
+
+<div class="get-involoved">
+    <div class="get-involved__card">
+        <Heading type={HeadingType.H3}>Volunteer</Heading>
+        <div class="flex flex-col justify-between">
+            <Paragraph>
+                We are always looking for new members to join our team. Find out how you can help
+                out.
+            </Paragraph>
+            <div>
+                <Link href={`/contact-us?source=${source}`}>I WANT TO HELP</Link>
+            </div>
+        </div>
+    </div>
+    <div class="get-involved__card">
+        <Heading type={HeadingType.H3}>Funding & Sponsorship</Heading>
+        <div class="flex flex-col justify-between">
+            <Paragraph>
+                We are always looking for new members to join our team. Find out how you can help
+                out.
+            </Paragraph>
+            <div><Link href={`/donate?source=${source}`}>DONATE</Link></div>
+        </div>
+    </div>
+</div>
+<style>
+    .get-involoved {
+        @apply grid
+            grid-cols-1
+            gap-6
+            sm:grid-cols-2;
+    }
+
+    .get-involved__card {
+        @apply rounded-lg
+            border
+            border-gray-200
+            bg-white p-4
+            pb-6
+            shadow-md;
+    }
+</style>

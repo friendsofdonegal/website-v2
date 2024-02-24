@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    image: ImageMetadata;
+    alt: string;
+}
+
+const { image, alt } = Astro.props;
+---
+
+<div class="program-card">
+    <div class="program-card__image">
+        {
+            image && (
+                <Image
+                    class="h-full w-full object-cover"
+                    src={image}
+                    alt={alt}
+                    width={550}
+                />
+            )
+        }
+    </div>
+    <div class="flex-1">
+        <slot />
+    </div>
+</div>
+
+<style>
+    .program-card {
+        @apply flex
+            flex-col
+            sm:flex-row
+            lg:flex-col
+            lg:max-w-full
+            items-stretch
+            rounded-xl
+            border
+            border-gray-400
+            bg-white
+            shadow-md;
+    }
+
+    .program-card__image {
+        @apply overflow-hidden
+            rounded-t-xl
+            sm:rounded-l-xl
+            sm:rounded-r-none
+            sm:max-w-[300px]
+            lg:max-w-full
+            lg:rounded-t-xl
+            lg:rounded-b-none;
+    }
+</style>

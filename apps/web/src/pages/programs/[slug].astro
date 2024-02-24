@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
+import GetInvolved from "@components/GetInvolved.astro";
+const programs = await getCollection("programs");
+
+export async function getStaticPaths() {
+    const programs = await getCollection("programs");
+    return programs.map((program) => {
+        return {
+            params: {
+                slug: program.slug.slice(3),
+            },
+        };
+    });
+}
+
+const { slug } = Astro.params;
+const program = programs.find((program) => program.slug.endsWith(slug));
+
+if (program == null) {
+    return {
+        status: 404,
+    };
+}
+
+const source = program.slug.slice(3);
+const { Content } = await program.render();
+---
+
+<ContentPageLayout title="Programs">
+    <div class="pb-8">
+        <Content />
+    </div>
+
+    <GetInvolved source={source} />
+</ContentPageLayout>
