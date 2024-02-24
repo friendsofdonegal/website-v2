@@ -1,15 +1,14 @@
 ---
-import Layout, { type BreadcrumbItem } from "src/layouts/Layout.astro";
+import Layout from "src/layouts/Layout.astro";
 
 interface Props {
     title: string;
-    breadcrumbs?: Array<BreadcrumbItem>;
 }
 
-const { breadcrumbs = [], title } = Astro.props;
+const { title } = Astro.props;
 ---
 
-<Layout title={title} breadcrumbs={breadcrumbs}>
+<Layout title={title}>
     <div class="main">
         <slot />
     </div>

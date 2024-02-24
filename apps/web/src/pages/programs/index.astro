@@ -6,20 +6,9 @@ import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
 import ProgramCard from "@components/ProgramCard.astro";
 import { Link } from "@fod/ui/components";
 const programs = await getCollection("programs");
-
-const breadcrumbs = [
-    {
-        title: "Home",
-        href: "/",
-    },
-    {
-        title: "Programs",
-        href: "/programs",
-    },
-];
 ---
 
-<ContentPageLayout title="Programs" breadcrumbs={breadcrumbs}>
+<ContentPageLayout title="Programs">
     <Heading type={HeadingType.H1}>Programs</Heading>
 
     <div class="grid grid-cols-1 gap-12 pt-8 lg:grid-cols-2">
@@ -33,7 +22,7 @@ const breadcrumbs = [
                                 <Paragraph>{program.data.summary}</Paragraph>
                             </div>
                             <div>
-                                <Link href={`programs/${program.slug.slice(3)}`}>Learn More</Link>
+                                <Link href={`/programs/${program.slug.slice(3)}`}>Learn More</Link>
                             </div>
                         </div>
                     </ProgramCard>

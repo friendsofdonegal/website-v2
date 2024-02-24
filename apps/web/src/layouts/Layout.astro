@@ -2,24 +2,15 @@
 import { Image } from "astro:assets";
 import { Button, Header } from "@fod/ui/components";
 import logo from "../assets/images/FOD-logo-white.png";
-import { Breadcrumbs } from "astro-breadcrumbs";
 
 import "@fod/ui/styles.css";
 import "../styles/tailwind.css";
-import "astro-breadcrumbs/breadcrumbs.css";
-
-export type BreadcrumbItem = {
-  text: string;
-  href: string;
-  "aria-current"?: string;
-}
 
 interface Props {
     title: string;
-    breadcrumbs?: Array<BreadcrumbItem>;
 }
 
-const { breadcrumbs = [], title } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -42,46 +33,7 @@ const { breadcrumbs = [], title } = Astro.props;
             ]}>
             <Image slot="logo" loading="eager" src={logo} alt="FOD logo" class="my-2 w-24" />
         </Header>
-        {
-            breadcrumbs.length > 0 && (
-                <div class="bg-gray-300 py-2">
-                    <div class="px-12 text-sm font-semibold text-gray-700 md:container md:mx-auto">
-                        <Breadcrumbs crumbs={breadcrumbs} truncated={true}>
-                            <svg
-                                slot="ellipsis"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <>
-                                    <circle cx="12" cy="12" r="1" />
-                                    <circle cx="19" cy="12" r="1" />
-                                    <circle cx="5" cy="12" r="1" />
-                                </>
-                            </svg>
-                            <svg
-                                slot="separator"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
-                        </Breadcrumbs>
-                    </div>
-                </div>
-            )
-        }
+
         <main>
             <slot />
         </main>
