@@ -7,11 +7,13 @@ import "./header.css";
 
 interface HeaderProps {
     logo?: ReactNode;
+    donateButton?: ReactNode;
+    mobileDonateButton?: ReactNode;
     menuItems?: { label: string; path: string }[];
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
-    const { logo, menuItems } = props;
+    const { donateButton, mobileDonateButton, logo, menuItems } = props;
     const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
     return (
@@ -25,9 +27,11 @@ const Header: React.FC<HeaderProps> = (props) => {
                         </NavMenuItem>
                     ))}
                 </ul>
-                <Button className="hidden md:inline" variant="tertiary">
-                    Donate
-                </Button>
+                {donateButton ?? (
+                    <Button className="hidden md:inline" variant="tertiary">
+                        Donate
+                    </Button>
+                )}
                 <MenuButton
                     className="md:hidden"
                     isOpen={mobileMenuOpen}
@@ -43,7 +47,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                             </NavMenuItem>
                         ))}
                     </ul>
-                    <Button variant="tertiary">Donate</Button>
+                    {mobileDonateButton ?? <Button variant="tertiary">Donate</Button>}
                 </div>
             )}
         </div>

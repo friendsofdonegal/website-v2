@@ -3,6 +3,7 @@ name: Donegal Power Packs
 summary: The Donegal PowerPacks project provides weekly meals and nutritional education to eligible families so that children thrive and return to school, well-fed and ready to learn.
 image: ../../assets/images/programs/power_packs.jpg
 homepageIndex: 2
+paypalDonateKey: DonegalPowerPacks
 ---
 
 # Donegal Power Packs

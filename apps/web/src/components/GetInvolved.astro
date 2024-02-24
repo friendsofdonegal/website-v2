@@ -1,13 +1,16 @@
 ---
+import { generateDonationUrl } from "@components/DonateButton.astro";
 import Heading, { HeadingType } from "@components/Heading.astro";
 import Paragraph from "@components/Paragraph.astro";
 import { Link } from "@fod/ui/components";
+import type { Program } from "../content/config.ts";
 
 interface Props {
     source: string;
+    program: Program;
 }
 
-const { source } = Astro.props;
+const { source, program } = Astro.props;
 ---
 
 <div class="get-involoved">
@@ -30,7 +33,7 @@ const { source } = Astro.props;
                 We are always looking for new members to join our team. Find out how you can help
                 out.
             </Paragraph>
-            <div><Link href={`/donate?source=${source}`}>DONATE</Link></div>
+            <div><Link href={generateDonationUrl(program)}>DONATE</Link></div>
         </div>
     </div>
 </div>

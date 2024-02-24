@@ -3,6 +3,7 @@ name: Getting Ahead
 summary: The Getting Ahead program is a 14 week course where individuals explore the theory of change while investigating their lives and their community.
 image: ../../assets/images/programs/gettingAhead.jpg
 homepageIndex: 1
+paypalDonateKey: GettingAhead
 ---
 
 # Getting Ahead

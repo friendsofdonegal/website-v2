@@ -1,0 +1,28 @@
+---
+import { Button } from "@fod/ui";
+import type { Program } from "../content/config";
+
+interface Props {
+    program?: Program;
+    class?: string;
+}
+
+export function generateDonationUrl(program: Program) {
+    const env = import.meta.env.DEV ? "www.sandbox" : "www";
+    const donationPrograms: Record<Program, string> = {
+        FriendsOfDonegal: import.meta.env.PROGRAM_FriendsOfDonegal ?? "TGRF5DU6R29C4",
+        DonegalPowerPacks: import.meta.env.PROGRAM_DonegalPowerPacks ?? "AJLZE5QH2TAAS",
+        DonegalCommunityGarden: import.meta.env.PROGRAM_DonegalCommunityGarden ?? "VZZXQ8BMDKWRY",
+        GettingAhead: import.meta.env.PROGRAM_GettingAhead ?? "MB67NNJ2HQSJL",
+    };
+
+    return `https://${env}.paypal.com/donate?hosted_button_id=${donationPrograms[program]}`;
+}
+
+const { program = "FriendsOfDonegal" } = Astro.props;
+const buttonUrl = generateDonationUrl(program);
+---
+
+<a href={buttonUrl}>
+    <Button className={Astro.props.class} variant="tertiary"><slot>Donate</slot></Button>
+</a>

@@ -33,5 +33,5 @@ const { Content } = await program.render();
         <Content />
     </div>
 
-    <GetInvolved source={source} />
+    <GetInvolved source={source} program={program.data.paypalDonateKey} />
 </ContentPageLayout>
