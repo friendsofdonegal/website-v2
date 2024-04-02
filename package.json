@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@fod/tsconfig": "workspace:*",
-    "astro": "^4.4.4",
+    "astro": "^4.5.12",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "turbo": "latest"
