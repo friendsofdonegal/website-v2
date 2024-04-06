@@ -14,6 +14,8 @@ collections:
   - name: "board-members"
     label: "Board Members"
     folder: "apps/web/src/content/board-members"
+    media_folder: /apps/web/public/images/board-members
+    public_folder: /public/images/board-members
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string" }
@@ -24,6 +26,8 @@ collections:
   - name: programs
     label: Programs
     folder: apps/web/src/content/programs
+    media_folder: /apps/web/public/images/programs
+    public_folder: /public/images/programs
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string" }
