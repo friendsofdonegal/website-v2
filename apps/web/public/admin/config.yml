@@ -17,7 +17,7 @@ collections:
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Title", name: "title", widget: "string", required: false }
+      - { label: "Title", name: "boardTitle", widget: "string", required: false }
       - { label: "Image", name: "imageUrl", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
 

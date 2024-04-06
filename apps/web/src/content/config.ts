@@ -4,7 +4,7 @@ const boardMemberCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      title: z.optional(z.string()),
+      boardTitle: z.optional(z.string()),
       imageUrl: z.optional(image()),
     }),
 });

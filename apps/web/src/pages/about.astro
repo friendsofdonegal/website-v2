@@ -20,14 +20,14 @@ const boardMembers = await getCollection("board-members");
                                 src={member.data.imageUrl}
                                 width={300}
                                 height={400}
-                                alt={`${member.data.name}, ${member.data.title}`}
+                                alt={`${member.data.name}, ${member.data.boardTitle}`}
                             />
                         )}
                     </div>
                     <div>
                         <Heading type={HeadingType.H3} class="mt-4 mb-0">
                             {member.data.name}
-                            {member.data.title && ` - ${member.data.title}`}
+                            {member.data.boardTitle && ` - ${member.data.boardTitle}`}
                         </Heading>
                         <Paragraph style={ParagraphStyle.Default}>
                             {member.body}
