@@ -9,18 +9,14 @@
   },
   "devDependencies": {
     "@fod/tsconfig": "workspace:*",
-    "astro": "^4.4.4",
+    "astro": "^4.5.16",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@8.15.6",
   "engines": {
-    "node": "20.11.1",
-    "pnpm": "8.15.4"
-  },
-  "volta": {
-    "node": "20.11.1",
-    "pnpm": "8.15.4"
+    "node": "20",
+    "pnpm": "8"
   }
 }
