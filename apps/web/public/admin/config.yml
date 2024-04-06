@@ -1,0 +1,22 @@
+local_backend: true
+
+backend:
+    name: "github"
+    repo: friendsofdonegal/website-v2
+    branch: main
+    base_url: https://friends-of-donegal-2024.netlify.app
+    automatic_deployments: false
+
+media_folder: "apps/web/public/images"
+public_folder: "/public/images"
+
+collections:
+  - name: "board-members" # Used in routes, e.g., /admin/collections/blog
+    label: "Board Members" # Used in the UI
+    folder: "apps/web/src/content/board-members" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: false }
+      - { label: "Image", name: "imageUrl", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }

@@ -1,7 +1,7 @@
 ---
 name: Donegal Community Garden
 summary: The Donegal PowerPacks project is a weekly food and education program that helps eligible families feed their children and improve their nutrition skills.
-image: ../../assets/images/programs/donegal-community-garden.jpg
+image: /public/images/donegal-community-garden.jpg
 paypalDonateKey: DonegalCommunityGarden
 ---
 
