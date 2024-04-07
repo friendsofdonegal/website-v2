@@ -20,7 +20,7 @@ const { source, program, class: classOverride } = Astro.props;
         We are always looking for new members to join our team. Find out how you can help out.
       </p>
       <div>
-        <Link href={`/contact-us?source=${source}`}>I WANT TO HELP</Link>
+        <Link href={`/contact?source=${source}`} className="no-underline">I WANT TO HELP</Link>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@ const { source, program, class: classOverride } = Astro.props;
       <p class="mt-0">
         We are always looking for new members to join our team. Find out how you can help out.
       </p>
-      <div><Link href={generateDonationUrl(program)}>DONATE</Link></div>
+      <div><Link href={generateDonationUrl(program)} className="no-underline">DONATE</Link></div>
     </div>
   </div>
 </div>
