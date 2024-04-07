@@ -30,6 +30,7 @@ const programs = await getCollection("programs");
       <label class="block">
         <span class="text-gray-700">Interesting in?</span>
         <select
+          name="interest"
           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
           <option>General Information</option>
           {
@@ -47,9 +48,21 @@ const programs = await getCollection("programs");
           spellcheck="false"
           data-ms-editor="true"></textarea>
       </label>
-      <label class="block">
+      <label class="block mt-4">
         <Button type="submit">Submit</Button>
       </label>
     </div>
   </form>
 </ContentPageLayout>
+
+<script>
+  const url = new URL(window.location.href);
+  const source = url.searchParams.get("source");
+
+  if (source !== null) {
+    const input: HTMLInputElement | null = document.querySelector('select[name="interest"]');
+    if (input) {
+      input.value = source;
+    }
+  }
+</script>
