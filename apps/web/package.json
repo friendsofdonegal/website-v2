@@ -31,8 +31,5 @@
     "@fod/eslint-config-custom": "workspace:*",
     "@fod/tailwind-config": "workspace:*",
     "@fod/tsconfig": "workspace:*"
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }

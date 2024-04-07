@@ -11,8 +11,5 @@
   },
   "peerDependencies": {
     "tailwindcss": "^3.3.5"
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }

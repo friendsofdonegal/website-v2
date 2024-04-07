@@ -6,8 +6,5 @@
   "devDependencies": {
     "@vercel/style-guide": "^5.2.0",
     "eslint-config-turbo": "^1.13.2"
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }
