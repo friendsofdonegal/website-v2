@@ -1,7 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import Heading, { HeadingType } from "@components/Heading.astro";
-import Paragraph from "@components/Paragraph.astro";
 import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
 import ProgramCard from "@components/ProgramCard.astro";
 import { Link } from "@fod/ui/components";
@@ -9,7 +7,7 @@ const programs = await getCollection("programs");
 ---
 
 <ContentPageLayout title="Programs">
-    <Heading type={HeadingType.H1}>Programs</Heading>
+    <h1>Programs</h1>
 
     <div class="grid grid-cols-1 gap-12 pt-8 lg:grid-cols-2">
         {
@@ -18,8 +16,8 @@ const programs = await getCollection("programs");
                     <ProgramCard image={program.data.image} alt={program.data.name}>
                         <div class="flex h-full flex-col justify-between px-4 pb-6 pt-4">
                             <div>
-                                <Heading type={HeadingType.H2}>{program.data.name}</Heading>
-                                <Paragraph>{program.data.summary}</Paragraph>
+                                <h2 class="mt-0">{program.data.name}</h2>
+                                <p>{program.data.summary}</p>
                             </div>
                             <div>
                                 <Link href={`/programs/${program.slug.slice(3)}`}>Learn More</Link>

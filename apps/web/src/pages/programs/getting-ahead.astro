@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
+import GetInvolved from "@components/GetInvolved.astro";
+import AcademicIcon from "@components/icons/academic.astro";
+import SparklesIcon from "@components/icons/sparkles.astro";
+import CalendarDays from "@components/icons/calendar-days.astro";
+
+const programs = await getCollection("programs");
+const gettingAhead = programs.find((program) => program.slug.endsWith("getting-ahead"));
+
+if (!gettingAhead) {
+  throw new Error("Getting Ahead program not found");
+}
+
+const source = gettingAhead.slug.slice(3);
+const { Content } = await gettingAhead.render();
+---
+
+<ContentPageLayout title="Programs">
+  <div class="pb-8">
+    <Content />
+
+    <ul class="my-12 flex flex-col items-center justify-evenly gap-12 px-0 sm:flex-row">
+      <li class="text-brand-700 flex flex-1 flex-col items-center">
+        <CalendarDays class="h-16 w-16 sm:h-12 sm:w-12" /><div>Started October 2022</div>
+      </li>
+      <li class="text-brand-700 flex flex-1 flex-col items-center">
+        <AcademicIcon class="h-16 w-16 sm:h-12 sm:w-12" /><div>52 graduates</div>
+      </li>
+      <li class="text-brand-700 flex flex-1 flex-col items-center">
+        <SparklesIcon class="h-16 w-16 sm:h-12 sm:w-12" /><div>75% graduation rate</div>
+      </li>
+    </ul>
+
+    <blockquote>
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum amet odit sit autem ex quia
+      deserunt est delectus, corporis illum placeat, aut magni, ipsam omnis molestias. Quisquam,
+      iure in? Temporibus." ~ Tim S.
+    </blockquote>
+
+    <blockquote>
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum amet odit sit autem ex quia
+      deserunt est delectus, corporis illum placeat, aut magni, ipsam omnis molestias. Quisquam,
+      iure in? Temporibus." ~ Sam T.
+    </blockquote>
+
+    <GetInvolved class="mt-12" source={source} program={gettingAhead.data.paypalDonateKey} />
+  </div>
+</ContentPageLayout>

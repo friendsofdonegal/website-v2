@@ -5,13 +5,15 @@ import GetInvolved from "@components/GetInvolved.astro";
 const programs = await getCollection("programs");
 
 export async function getStaticPaths() {
-    const programs = await getCollection("programs");
-    return programs.map((program) => {
-        return {
-            params: {
-                slug: program.slug.slice(3),
-            },
-        };
+  const programs = await getCollection("programs");
+  return programs
+    .filter((program) => !program.slug.endsWith("getting-ahead"))
+    .map((program) => {
+      return {
+        params: {
+          slug: program.slug.slice(3),
+        },
+      };
     });
 }
 
@@ -19,9 +21,9 @@ const { slug } = Astro.params;
 const program = programs.find((program) => program.slug.endsWith(slug));
 
 if (program == null) {
-    return {
-        status: 404,
-    };
+  return {
+    status: 404,
+  };
 }
 
 const source = program.slug.slice(3);
@@ -29,9 +31,9 @@ const { Content } = await program.render();
 ---
 
 <ContentPageLayout title="Programs">
-    <div class="pb-8">
-        <Content />
-    </div>
+  <div class="pb-8">
+    <Content />
+  </div>
 
-    <GetInvolved source={source} program={program.data.paypalDonateKey} />
+  <GetInvolved source={source} program={program.data.paypalDonateKey} />
 </ContentPageLayout>

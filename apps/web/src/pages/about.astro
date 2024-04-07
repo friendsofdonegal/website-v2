@@ -1,48 +1,44 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import Heading, { HeadingType } from "@components/Heading.astro";
-import Paragraph, { ParagraphStyle } from "@components/Paragraph.astro";
 import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
 const boardMembers = await getCollection("board-members");
 ---
 
 <ContentPageLayout title="About Us">
-    <Heading type={HeadingType.H2} class="mb-8">Meet Our Board of Directors</Heading>
-    {
-        boardMembers.map((member) => (
-            <>
-                <div class="flex flex-col md:flex-row gap-x-8">
-                    <div class="w-300 h-400 flex-shrink-0">
-                        {member.data.imageUrl && (
-                            <Image
-                                class={"object-contain rounded-2xl"}
-                                src={member.data.imageUrl}
-                                width={300}
-                                height={400}
-                                alt={`${member.data.name}, ${member.data.boardTitle}`}
-                            />
-                        )}
-                    </div>
-                    <div>
-                        <Heading type={HeadingType.H3} class="mt-4 mb-0">
-                            {member.data.name}
-                            {member.data.boardTitle && ` - ${member.data.boardTitle}`}
-                        </Heading>
-                        <Paragraph style={ParagraphStyle.Default}>
-                            {member.body}
-                        </Paragraph>
-                    </div>
-                </div>
-                <hr class="my-8" />
-            </>
-        ))
-    }
+  <h2>Meet Our Board of Directors</h2>
+  {
+    boardMembers.map((member) => (
+      <>
+        <div class="flex flex-col gap-x-8 md:flex-row">
+          <div class="w-300 h-400 flex-shrink-0">
+            {member.data.imageUrl && (
+              <Image
+                class={"rounded-2xl object-contain"}
+                src={member.data.imageUrl}
+                width={300}
+                height={400}
+                alt={`${member.data.name}, ${member.data.boardTitle}`}
+              />
+            )}
+          </div>
+          <div>
+            <h3>
+              {member.data.name}
+              {member.data.boardTitle && ` - ${member.data.boardTitle}`}
+            </h3>
+            <p>{member.body}</p>
+          </div>
+        </div>
+        <hr />
+      </>
+    ))
+  }
 
-    <Heading type={HeadingType.H2} id="501c3">501C3 Information</Heading>
-    <Paragraph>
-        Friends of Donegal (FOD) is a 501(c) (3) organization. The official registration and
-        financial information of FOD may be obtained from the Pennsylvania Department of State by
-        calling toll free within PA. 1-800-732-0999. Registration does not imply endorsement.
-    </Paragraph>
+  <h2 id="501c3">501C3 Information</h2>
+  <p>
+    Friends of Donegal (FOD) is a 501(c) (3) organization. The official registration and financial
+    information of FOD may be obtained from the Pennsylvania Department of State by calling toll
+    free within PA. 1-800-732-0999. Registration does not imply endorsement.
+  </p>
 </ContentPageLayout>

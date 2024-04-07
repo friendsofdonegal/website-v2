@@ -8,7 +8,7 @@ import "@fod/ui/styles.css";
 import "../styles/tailwind.css";
 
 interface Props {
-    title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -16,67 +16,67 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-    </head>
-    <body>
-        <Header
-            client:load
-            menuItems={[
-                { label: "Home", path: "/" },
-                { label: "Programs", path: "/programs" },
-                { label: "About", path: "/about" },
-            ]}>
-            <DonateButton class="hidden md:inline" slot="donateButton" />
-            <DonateButton slot="mobileDonateButton" />
-            <Image slot="logo" loading="eager" src={logo} alt="FOD logo" class="my-2 w-24" />
-        </Header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header
+      client:load
+      menuItems={[
+        { label: "Home", path: "/" },
+        { label: "Programs", path: "/programs" },
+        { label: "About", path: "/about" },
+      ]}>
+      <DonateButton class="hidden md:inline" slot="donateButton" />
+      <DonateButton slot="mobileDonateButton" />
+      <Image slot="logo" loading="eager" src={logo} alt="FOD logo" class="my-2 w-24" />
+    </Header>
 
-        <main>
-            <slot />
-        </main>
-        <div class="footer">
-            <div class="footer__content">
-                <div class="my-12 flex flex-col justify-between gap-12 text-xs sm:flex-row">
-                    <div>
-                        <h6 class="font-bold">Sitemap</h6>
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/about">About</a></li>
-                            <li><a href="/programs">Programs</a></li>
-                        </ul>
-                    </div>
-                    <div class="sm:text-center">
-                        <h6 class="font-bold">Friends of Donegal</h6>
-                        <ul>
-                            <li>Copyright 2023</li>
-                            <li><a href="/about#501c3">501(C)3 Information</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <DonateButton />
-                    </div>
-                </div>
-            </div>
+    <main>
+        <slot />
+    </main>
+    <div class="footer">
+      <div class="footer__content">
+        <div class="my-12 flex flex-col justify-between gap-12 text-xs sm:flex-row">
+          <div>
+            <h6 class="font-bold">Sitemap</h6>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/programs">Programs</a></li>
+            </ul>
+          </div>
+          <div class="sm:text-center">
+            <h6 class="font-bold">Friends of Donegal</h6>
+            <ul>
+              <li>Copyright 2023</li>
+              <li><a href="/about#501c3">501(C)3 Information</a></li>
+            </ul>
+          </div>
+          <div>
+            <DonateButton />
+          </div>
         </div>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>
 
 <style>
-    body {
-        @apply grid min-h-screen grid-rows-[auto,1fr,auto] bg-gray-50;
-    }
+  body {
+    @apply grid min-h-screen grid-rows-[auto,1fr,auto] bg-gray-50;
+  }
 
-    .footer {
-        @apply bg-gray-200 text-gray-800 shadow-inner;
-    }
+  .footer {
+    @apply bg-gray-200 text-gray-800 shadow-inner;
+  }
 
-    .footer .footer__content {
-        @apply px-16 md:container md:mx-auto;
-    }
+  .footer .footer__content {
+    @apply px-16 md:container md:mx-auto;
+  }
 </style>
