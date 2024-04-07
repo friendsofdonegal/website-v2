@@ -14,7 +14,7 @@ const { image, alt } = Astro.props;
         {
             image && (
                 <Image
-                    class="h-full w-full object-cover"
+                    class="h-full w-full object-cover m-0"
                     src={image}
                     alt={alt}
                     width={550}
@@ -22,7 +22,7 @@ const { image, alt } = Astro.props;
             )
         }
     </div>
-    <div class="flex-1">
+    <div class="flex-1 prose-a:no-underline">
         <slot />
     </div>
 </div>

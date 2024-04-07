@@ -7,7 +7,7 @@ const programs = await getCollection("programs");
 
 <ContentPageLayout title="Contact Us">
   <h1>Contact Us</h1>
-  <form name="contact" method="POST" data-netlify="true">
+  <form name="contact" method="POST" action="/contact/thank-you" data-netlify="true">
     <div class="grid grid-cols-1 gap-6">
       <label class="block">
         <span class="text-gray-700">Full name</span>
@@ -51,7 +51,7 @@ const programs = await getCollection("programs");
           spellcheck="false"
           data-ms-editor="true"></textarea>
       </label>
-      <label class="block mt-4">
+      <label class="mt-4 block">
         <Button type="submit">Submit</Button>
       </label>
     </div>
