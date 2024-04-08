@@ -1,136 +1,81 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroBlock from "../components/HeroBlock.astro";
-import Heading, { HeadingType, HeadingColor } from "../components/Heading.astro";
-import Paragraph, { ParagraphColor } from "../components/Paragraph.astro";
-import { getCollection } from "astro:content";
 import Prose from "@components/Prose.astro";
-const programs = await getCollection("programs");
-const [program1, program2] = programs.sort(
-  (a, b) =>
-    (a.data.homepageIndex ?? Number.MAX_SAFE_INTEGER) -
-    (b.data.homepageIndex ?? Number.MAX_SAFE_INTEGER),
-);
 ---
 
 <Layout title="Friends of Donegal">
   <div class="w-full shadow-inner">
-    <div
-      class="font-body text-brand-700 p-12 text-center text-3xl font-thin italic md:container md:mx-auto">
-      We harness the collective power and influence of the community to improve the lives of our
-      neighbors.
+    <div class="p-12 py-20 md:container md:mx-auto">
+      <Prose class="p-0">
+        <p class="text-lg leading-8 sm:text-xl sm:leading-9 md:text-2xl md:leading-10">
+          <b>Freinds of Donegal</b> is a central Pennsylvania organization that seeks to harness the
+          collective power and influence of the community to improve the lives of our neighbors.
+        </p>
+        <a
+          href="/programs"
+          class="ttext-lg font-semibold leading-8 underline sm:text-xl sm:leading-9 md:text-2xl md:leading-10">
+          Learn more</a
+        >
+      </Prose>
     </div>
-  </div>
-  <div>
-    {
-      program1 && (
-        <HeroBlock image={program1.data.image} imageAltText={program1.data.name}>
-          <div class="my-auto h-full bg-blue-600">
-            <div class="flex md:container md:mx-auto">
-              <div class="my-auto px-16 pb-8 pt-6">
-                <Heading type={HeadingType.H2} color={HeadingColor.White}>
-                  {program1.data.name}
-                </Heading>
-                <Paragraph color={ParagraphColor.White}>
-                  <span>{program1.data.summary}</span>
-                  <a
-                    class="font-semibold text-white underline"
-                    href={`programs/${program1.slug.slice(3)}`}>
-                    Learn more
-                  </a>
-                </Paragraph>
-              </div>
-            </div>
-          </div>
-        </HeroBlock>
-      )
-    }
-  </div>
 
-  <div class="w-full shadow-inner">
-    <div
-      class="font-body text-brand-700 p-12 text-center text-3xl font-thin italic md:container md:mx-auto">
-      2023 Comnunity Report
+    <div class="w-full shadow-inner">
+      <div
+        class="font-body text-brand-700 p-12 text-center text-3xl font-thin italic md:container md:mx-auto">
+        2023 Comnunity Report
+      </div>
     </div>
-  </div>
-  <div>
-    {
-      program2 && (
-        <HeroBlock
-          image={program2.data.image}
-          imageAltText={program2.data.name}
-          imagePosition="right">
-          <div class="my-auto h-full bg-teal-800">
-            <div class="flex md:container md:mx-auto">
-              <div class="my-auto px-16 pb-8 pt-6">
-                <Heading type={HeadingType.H2} color={HeadingColor.White}>
-                  {program2.data.name}
-                </Heading>
-                <Paragraph color={ParagraphColor.White}>
-                  <span>{program2.data.summary}</span>
-                  <a
-                    class="font-semibold text-white underline"
-                    href={`programs/${program2.slug.slice(3)}`}>
-                    Learn more
-                  </a>
-                </Paragraph>
-              </div>
-            </div>
-          </div>
-        </HeroBlock>
-      )
-    }
-  </div>
 
-  <div class="w-full shadow-inner">
-    <div
-      class="font-body text-brand-700 p-12 text-center text-3xl font-thin italic md:container md:mx-auto">
-      Together we promote hope and equity for all.
+    <div class="w-full shadow-inner">
+      <div
+        class="font-body text-brand-700 p-12 text-center text-3xl font-thin italic md:container md:mx-auto">
+        Together we promote hope and equity for all.
+      </div>
     </div>
-  </div>
-  <div class="p-16 pt-6 md:container md:mx-auto">
-    <Prose>
-      <Heading type={HeadingType.H2}>Our Core Values</Heading>
+    <div class="p-16 pt-6 md:container md:mx-auto">
+      <Prose>
+        <h2>Our Core Values</h2>
 
-      <Heading type={HeadingType.H3}>Equity</Heading>
-      <Paragraph>
-        We believe everyone should be seen, heard, valued, and empowered to succeed. We work to
-        change practices, structures, and policies to realize equity for everyone.
-      </Paragraph>
+        <h3>Equity</h3>
+        <p>
+          We believe everyone should be seen, heard, valued, and empowered to succeed. We work to
+          change practices, structures, and policies to realize equity for everyone.
+        </p>
 
-      <Heading type={HeadingType.H3}>Making Sustainable Change</Heading>
-      <Paragraph>
-        We are committed to the economic security of all people. Unlike systems that create and
-        maintain disparities, we adopt approaches that meet the individual's needs the way they
-        experience social problems.
-      </Paragraph>
+        <h3>Making Sustainable Change</h3>
+        <p>
+          We are committed to the economic security of all people. Unlike systems that create and
+          maintain disparities, we adopt approaches that meet the individual's needs the way they
+          experience social problems.
+        </p>
 
-      <Heading type={HeadingType.H3}>Persistent</Heading>
-      <Paragraph>
-        We understand to make sustainable change we must pursue our goals even when it is difficult
-        or opposed by others. We are driven to think and do what is best for those in need in our
-        community.
-      </Paragraph>
+        <h3>Persistent</h3>
+        <p>
+          We understand to make sustainable change we must pursue our goals even when it is
+          difficult or opposed by others. We are driven to think and do what is best for those in
+          need in our community.
+        </p>
 
-      <Heading type={HeadingType.H3}>Opportunity</Heading>
-      <Paragraph>
-        We work with others to create the circumstances for members of our community to thrive.
-      </Paragraph>
+        <h3>Opportunity</h3>
+        <p>
+          We work with others to create the circumstances for members of our community to thrive.
+        </p>
 
-      <Heading type={HeadingType.H3}>With</Heading>
-      <Paragraph>We are here to walk with you, team with you and celebrate with you.</Paragraph>
+        <h3>With</h3>
+        <p>We are here to walk with you, team with you and celebrate with you.</p>
 
-      <Heading type={HeadingType.H3}>Empathy</Heading>
-      <Paragraph>
-        We are genuinely interested in the emotional state of others and engage with those emotions
-        to compassionately take action.
-      </Paragraph>
+        <h3>Empathy</h3>
+        <p>
+          We are genuinely interested in the emotional state of others and engage with those
+          emotions to compassionately take action.
+        </p>
 
-      <Heading type={HeadingType.H3}>Relationships</Heading>
-      <Paragraph>
-        RelationshipsWe build connections between people and organizations, founded in mutual
-        respect, to work together to bring about change.
-      </Paragraph>
-    </Prose>
+        <h3>Relationships</h3>
+        <p>
+          RelationshipsWe build connections between people and organizations, founded in mutual
+          respect, to work together to bring about change.
+        </p>
+      </Prose>
+    </div>
   </div>
 </Layout>

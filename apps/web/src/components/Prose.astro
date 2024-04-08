@@ -1,9 +1,17 @@
 ---
+import { twMerge } from "tailwind-merge";
 
+interface Props {
+  class?: string;
+}
+
+const { class: classOverride } = Astro.props;
 ---
 
 <div
-  class="prose dark:prose-invert prose-a:text-brand-600
-  max-w-none p-12 md:container md:mx-auto">
+  class={twMerge(
+    "prose prose-a:text-brand-600 max-w-none p-12 md:container md:mx-auto",
+    classOverride,
+  )}>
   <slot />
 </div>
