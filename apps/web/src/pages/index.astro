@@ -6,36 +6,31 @@ import Prose from "@components/Prose.astro";
 <Layout title="Friends of Donegal">
   <div class="w-full shadow-inner">
     <div class="p-12 py-20 md:container md:mx-auto">
+      <h2
+        class="font-body text-brand-700 mb-6 text-center text-3xl font-thin italic md:container md:mx-auto">
+        Our Mission
+      </h2>
       <Prose class="p-0">
-        <p class="text-lg leading-8 sm:text-xl sm:leading-9 md:text-2xl md:leading-10">
-          <b>Freinds of Donegal</b> is a central Pennsylvania organization that seeks to harness the
-          collective power and influence of the community to improve the lives of our neighbors.
+        <p>
+          We harness the collective power and influence of the community to improve the lives of our
+          neighbors.
         </p>
-        <a
-          href="/programs"
-          class="ttext-lg font-semibold leading-8 underline sm:text-xl sm:leading-9 md:text-2xl md:leading-10">
-          Learn more</a
-        >
+        <a href="/programs"> Learn more</a>
       </Prose>
-    </div>
-
-    <div class="w-full shadow-inner">
-      <div
-        class="font-body text-brand-700 p-12 text-center text-3xl font-thin italic md:container md:mx-auto">
-        2023 Comnunity Report
-      </div>
-    </div>
-
-    <div class="w-full shadow-inner">
-      <div
-        class="font-body text-brand-700 p-12 text-center text-3xl font-thin italic md:container md:mx-auto">
-        Together we promote hope and equity for all.
-      </div>
-    </div>
-    <div class="p-16 pt-6 md:container md:mx-auto">
+      <hr class="my-12" />
+      <h2
+        class="font-body text-brand-700 mb-6 text-center text-3xl font-thin italic md:container md:mx-auto">
+        Our Vision
+      </h2>
+      <Prose class="p-0">
+        <p>Together we promote hope and equity for all.</p>
+      </Prose>
+      <hr class="my-12" />
+      <h2
+        class="font-body text-brand-700 mb-6 text-center text-3xl font-thin italic md:container md:mx-auto">
+        Our Core Values
+      </h2>
       <Prose>
-        <h2>Our Core Values</h2>
-
         <h3>Equity</h3>
         <p>
           We believe everyone should be seen, heard, valued, and empowered to succeed. We work to
@@ -76,6 +71,13 @@ import Prose from "@components/Prose.astro";
           respect, to work together to bring about change.
         </p>
       </Prose>
+    </div>
+
+    <div class="w-full shadow-inner">
+      <div
+        class="font-body text-brand-700 p-12 text-center text-3xl font-thin italic md:container md:mx-auto">
+        2023 Comnunity Report
+      </div>
     </div>
   </div>
 </Layout>
