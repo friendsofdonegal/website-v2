@@ -15,7 +15,7 @@ Looking forward to 2024, Donegal Community Gardens is set to grow even further, 
 
 The Donegal Community Gardens represents more than just the cultivation of plants; it signifies a growing movement of empowerment, resilience, and community solidarity. Each step in our journey underscores the powerful notion that with community support and collaboration, dreams can not only emerge but also thrive and enrich lives. Join us as we continue to sow seeds of hope and harvest a future filled with potential and growth.
 
-## WANT TO GET INVOLVED? HERE'S HOW...
+## WANT TO GET INVOLVED? HERE'S HOW
 
 * Donations: PayPal through the Friends of Donegal website.
 * Volunteer: for the gardens, Power Packs, or Getting Ahead.
