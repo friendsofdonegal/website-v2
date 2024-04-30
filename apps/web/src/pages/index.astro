@@ -4,41 +4,13 @@ import { Image } from "astro:assets";
 import communityReportImg from "../assets/images/2023-Community-Report-cover.jpg";
 import gettingAheadImg from "../assets/images/getting-ahead.jpg";
 import gettingAhead2Img from "../assets/images/getting-ahead-2.jpg";
-import Link  from "@components/Link.astro";
 import { Button } from "@fod/ui";
+import Link from "@components/Link.astro";
 ---
 
 <Layout title="Friends of Donegal">
   <div class="w-full shadow-inner">
-    <section class="w-full p-12 md:container md:mx-auto md:py-24 lg:py-32">
-      <div class="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
-        <div class="flex flex-col justify-center space-y-4">
-          <div class="space-y-2">
-            <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-              2023 Community Report
-            </h1>
-            <p class="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-              The Friends of Donegal 2023 Report to the Community is now available. Discover the
-              impact that we are making within our community.
-            </p>
-          </div>
-          <div class="flex flex-col gap-2 min-[400px]:flex-row">
-            <Link href="/contact/community-list">
-              <Button className="w-full lg:w-auto">View Report</Button>
-            </Link>
-          </div>
-        </div>
-        <Image
-          loading="eager"
-          src={communityReportImg}
-          alt="FOD logo"
-          alt="Community Report"
-          class="mx-auto aspect-square h-[300px] overflow-hidden rounded-xl bg-slate-300 object-cover sm:w-full lg:h-[450px] lg:w-[450px]"
-        />
-      </div>
-    </section>
-
-    <section class="w-full bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-gray-800">
+    <section class="w-full py-12 md:py-24 lg:py-32">
       <div class="p-12 md:container md:mx-auto">
         <div
           class="grid items-center gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_450px]">
@@ -62,7 +34,7 @@ import { Button } from "@fod/ui";
       </div>
     </section>
 
-    <section class="w-full py-12 md:py-24 lg:py-32">
+    <section class="w-full bg-gray-100 py-12 md:py-24 lg:py-32">
       <div class="p-12 md:container md:mx-auto">
         <div
           class="grid items-center gap-6 lg:grid-cols-[400px_1fr] lg:gap-12 xl:grid-cols-[450px_1fr]">
@@ -91,7 +63,35 @@ import { Button } from "@fod/ui";
       </div>
     </section>
 
-    <section class="w-full bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-gray-800">
+    <section class="w-full p-12 md:container md:mx-auto md:py-24 lg:py-32">
+      <div class="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
+        <div class="flex flex-col justify-center space-y-4">
+          <div class="space-y-2">
+            <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+              2023 Community Report
+            </h1>
+            <p class="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+              The Friends of Donegal 2023 Report to the Community is now available. Discover the
+              impact that we are making within our community.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 min-[400px]:flex-row">
+            <Link href="/pdfs/2023-Community-Report.pdf" target="_blank">
+              <Button className="w-full lg:w-auto">View Report</Button>
+            </Link>
+          </div>
+        </div>
+        <Image
+          loading="eager"
+          src={communityReportImg}
+          alt="FOD logo"
+          alt="Community Report"
+          class="mx-auto aspect-square h-[300px] overflow-hidden rounded-xl bg-slate-300 object-cover sm:w-full lg:h-[450px] lg:w-[450px]"
+        />
+      </div>
+    </section>
+
+    <section class="w-full bg-gray-100 py-12 md:py-24 lg:py-32">
       <div class="p-12 md:container md:mx-auto">
         <div
           class="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
