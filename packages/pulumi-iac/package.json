@@ -1,0 +1,19 @@
+{
+    "name": "@fod/iac",
+    "main": "index.ts",
+    "devDependencies": {
+        "@types/node": "^18"
+    },
+    "dependencies": {
+        "@pulumi/azure-native": "^2.0.0",
+        "@pulumi/pulumi": "^3.113.0",
+        "typescript": "^5.0.0"
+    },
+    "scripts": {
+        "build": "tsc",
+        "deploy": "pulumi up --yes",
+        "destroy": "pulumi destroy --yes",
+        "pulumi": "pulumi",
+        "clean": "rm -rf node_modules && rm -rf pulumi.* && rm -rf dist"
+    }
+}

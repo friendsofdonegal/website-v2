@@ -8,8 +8,12 @@
     &__mobile-menu {
         @apply px-12 pt-4 pb-8 md:container md:mx-auto;
 
+        ul {
+            @apply pl-3;
+        }
+
         li {
-            @apply pt-0 pb-6 uppercase;
+            @apply pt-0 pb-6;
         }
     }
 }

@@ -20,12 +20,9 @@ const Header: React.FC<HeaderProps> = (props) => {
     <div className="header">
       <div className="header__content">
         <a href="/">{logo}</a>
-        <ul className="mx-12 flex-grow justify-start gap-x-12 md:flex md:flex-row">
+        <ul className="mx-12 flex-grow justify-end gap-x-12 md:flex md:flex-row">
           {menuItems?.map((item, id) => (
-            <NavMenuItem
-              className="hidden text-lg uppercase tracking-wider md:inline"
-              key={`id-${id}`}
-              path={item.path}>
+            <NavMenuItem className="hidden md:inline" key={`id-${id}`} path={item.path}>
               {item.label}
             </NavMenuItem>
           ))}

@@ -1,83 +1,155 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Prose from "@components/Prose.astro";
+import { Image } from "astro:assets";
+import communityReportImg from "../assets/images/2023-Community-Report-cover.jpg";
+import gettingAheadImg from "../assets/images/getting-ahead.jpg";
+import gettingAhead2Img from "../assets/images/getting-ahead-2.jpg";
+import Link  from "@components/Link.astro";
+import { Button } from "@fod/ui";
 ---
 
 <Layout title="Friends of Donegal">
   <div class="w-full shadow-inner">
-    <div class="p-12 py-20 md:container md:mx-auto">
-      <h2
-        class="font-body text-brand-700 mb-6 text-center text-3xl font-thin italic md:container md:mx-auto">
-        Our Mission
-      </h2>
-      <Prose class="p-0">
-        <p>
-          We harness the collective power and influence of the community to improve the lives of our
-          neighbors.
-        </p>
-        <a href="/programs"> Learn more</a>
-      </Prose>
-      <hr class="my-12" />
-      <h2
-        class="font-body text-brand-700 mb-6 text-center text-3xl font-thin italic md:container md:mx-auto">
-        Our Vision
-      </h2>
-      <Prose class="p-0">
-        <p>Together we promote hope and equity for all.</p>
-      </Prose>
-      <hr class="my-12" />
-      <h2
-        class="font-body text-brand-700 mb-6 text-center text-3xl font-thin italic md:container md:mx-auto">
-        Our Core Values
-      </h2>
-      <Prose>
-        <h3>Equity</h3>
-        <p>
-          We believe everyone should be seen, heard, valued, and empowered to succeed. We work to
-          change practices, structures, and policies to realize equity for everyone.
-        </p>
-
-        <h3>Making Sustainable Change</h3>
-        <p>
-          We are committed to the economic security of all people. Unlike systems that create and
-          maintain disparities, we adopt approaches that meet the individual's needs the way they
-          experience social problems.
-        </p>
-
-        <h3>Persistent</h3>
-        <p>
-          We understand to make sustainable change we must pursue our goals even when it is
-          difficult or opposed by others. We are driven to think and do what is best for those in
-          need in our community.
-        </p>
-
-        <h3>Opportunity</h3>
-        <p>
-          We work with others to create the circumstances for members of our community to thrive.
-        </p>
-
-        <h3>With</h3>
-        <p>We are here to walk with you, team with you and celebrate with you.</p>
-
-        <h3>Empathy</h3>
-        <p>
-          We are genuinely interested in the emotional state of others and engage with those
-          emotions to compassionately take action.
-        </p>
-
-        <h3>Relationships</h3>
-        <p>
-          RelationshipsWe build connections between people and organizations, founded in mutual
-          respect, to work together to bring about change.
-        </p>
-      </Prose>
-    </div>
-
-    <div class="w-full shadow-inner">
-      <div
-        class="font-body text-brand-700 p-12 text-center text-3xl font-thin italic md:container md:mx-auto">
-        2023 Comnunity Report
+    <section class="w-full p-12 md:container md:mx-auto md:py-24 lg:py-32">
+      <div class="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
+        <div class="flex flex-col justify-center space-y-4">
+          <div class="space-y-2">
+            <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+              2023 Community Report
+            </h1>
+            <p class="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+              The Friends of Donegal 2023 Report to the Community is now available. Discover the
+              impact that we are making within our community.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 min-[400px]:flex-row">
+            <Link href="/contact/community-list">
+              <Button className="w-full lg:w-auto">View Report</Button>
+            </Link>
+          </div>
+        </div>
+        <Image
+          loading="eager"
+          src={communityReportImg}
+          alt="FOD logo"
+          alt="Community Report"
+          class="mx-auto aspect-square h-[300px] overflow-hidden rounded-xl bg-slate-300 object-cover sm:w-full lg:h-[450px] lg:w-[450px]"
+        />
       </div>
-    </div>
+    </section>
+
+    <section class="w-full bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-gray-800">
+      <div class="p-12 md:container md:mx-auto">
+        <div
+          class="grid items-center gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_450px]">
+          <div class="flex flex-col justify-center space-y-4">
+            <div class="space-y-2">
+              <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Our Mission</h2>
+              <p
+                class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                We harness the collective power and influence of the community to improve the lives
+                of our neighbors.
+              </p>
+            </div>
+          </div>
+          <Image
+            loading="eager"
+            src={gettingAhead2Img}
+            alt="Getting Ahead"
+            class="mx-auto aspect-square h-[310px] overflow-hidden rounded-xl bg-slate-300 object-cover object-center sm:w-full lg:h-[450px] lg:w-[450px]"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full py-12 md:py-24 lg:py-32">
+      <div class="p-12 md:container md:mx-auto">
+        <div
+          class="grid items-center gap-6 lg:grid-cols-[400px_1fr] lg:gap-12 xl:grid-cols-[450px_1fr]">
+          <Image
+            loading="eager"
+            src={gettingAheadImg}
+            alt="Getting Ahead Graduates"
+            class="mx-auto hidden aspect-square h-[310px] overflow-hidden rounded-xl bg-slate-300 object-cover object-center sm:w-full lg:inline lg:h-[450px] lg:w-[450px]"
+          />
+          <div class="flex flex-col justify-center space-y-4">
+            <div class="space-y-2">
+              <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Our Vision</h2>
+              <p
+                class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Together we promote hope and equity for all.
+              </p>
+            </div>
+          </div>
+          <Image
+            loading="eager"
+            src={gettingAheadImg}
+            alt="Getting Ahead Graduates"
+            class="mx-auto aspect-square h-[310px] overflow-hidden rounded-xl bg-slate-300 object-cover object-center sm:w-full lg:hidden lg:h-[450px] lg:w-[450px]"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-gray-800">
+      <div class="p-12 md:container md:mx-auto">
+        <div
+          class="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
+          <div class="flex flex-col justify-center space-y-4">
+            <div class="space-y-2">
+              <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Our Core Values</h2>
+              <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Equity</h3>
+              <p
+                class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                We believe everyone should be seen, heard, valued, and empowered to succeed. We work
+                to change practices, structures, and policies to realize equity for everyone.
+              </p>
+
+              <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">
+                Making Sustainable Change
+              </h3>
+              <p
+                class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                We are committed to the economic security of all people. Unlike systems that create
+                and maintain disparities, we adopt approaches that meet the individual's needs the
+                way they experience social problems.
+              </p>
+
+              <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Persistent</h3>
+              <p
+                class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                We understand to make sustainable change we must pursue our goals even when it is
+                difficult or opposed by others. We are driven to think and do what is best for those
+                in need in our community.
+              </p>
+
+              <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Opportunity</h3>
+              <p
+                class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                We work with others to create the circumstances for members of our community to
+                thrive.
+              </p>
+
+              <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">With</h3>
+              <p>We are here to walk with you, team with you and celebrate with you.</p>
+
+              <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Empathy</h3>
+              <p
+                class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                We are genuinely interested in the emotional state of others and engage with those
+                emotions to compassionately take action.
+              </p>
+
+              <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Relationships</h3>
+              <p
+                class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                RelationshipsWe build connections between people and organizations, founded in
+                mutual respect, to work together to bring about change.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </Layout>
