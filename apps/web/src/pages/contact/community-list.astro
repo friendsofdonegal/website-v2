@@ -4,11 +4,18 @@ import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
 ---
 
 <ContentPageLayout title="Community Resource List">
-  <h1>Community Resource List</h1>
+  <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+    Community Resource List
+  </h1>
+  <p class="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+    We have compiled a list of resources available to the community. This list includes local food
+    banks, shelters, and other services. If you are in need of assistance, or know of someone that
+    is in need of assistance, go to the following page and request for us to send you a copy.
+  </p>
   <form name="community-list" method="POST" action="/.netlify/functions/resource-list">
     <div class="grid grid-cols-1 gap-6">
       <label class="block">
-        <span class="text-gray-700">Email address</span>
+        <span class="font-bold text-gray-700">Email address</span>
         <input
           name="email"
           type="email"
@@ -24,8 +31,7 @@ import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
           class="mr-2 mt-1.5 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
         />
         <span class="flex-grow">
-          I want to receive the newsletter and stay up to date on the latest Friends of Donegal
-          news?
+          I want to receive the newsletter and stay up to date on the latest news.
         </span>
       </label>
       <label class="mt-4 block">
