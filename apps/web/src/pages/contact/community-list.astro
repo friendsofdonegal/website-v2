@@ -1,6 +1,8 @@
 ---
 import { Button } from "@fod/ui/components";
 import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
+
+const mailerUrl = import.meta.env.PUBLIC_MAILER
 ---
 
 <ContentPageLayout title="Community Resource List">
@@ -12,7 +14,7 @@ import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
     banks, shelters, and other services. If you are in need of assistance, or know of someone that
     is in need of assistance, go to the following page and request for us to send you a copy.
   </p>
-  <form name="community-list" method="POST" action="/.netlify/functions/resource-list">
+  <form name="community-list" method="POST" action={mailerUrl}>
     <div class="grid grid-cols-1 gap-6">
       <label class="block">
         <span class="font-bold text-gray-700">Email address</span>
