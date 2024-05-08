@@ -2,7 +2,7 @@ import * as React from "react";
 import { clsx } from "clsx";
 import "./button.css";
 
-interface Props {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   variant?: "primary" | "secondary" | "tertiary";
   size?: "small" | "medium" | "large";
@@ -11,20 +11,29 @@ interface Props {
   type?: "button" | "submit" | "reset";
 }
 
-export const Button = ({
-  children,
-  className,
-  onClick,
-  variant = "primary",
-  size = "medium",
-  type = "button",
-}: Props) => {
-  return (
-    <button
-      className={clsx("btn", className, `--${variant}`, `--${size}`)}
-      onClick={onClick}
-      type={type}>
-      {children}
-    </button>
-  );
-};
+export const Button = React.forwardRef<HTMLButtonElement, Props>(
+  (
+    {
+      children,
+      className,
+      onClick,
+      variant = "primary",
+      size = "medium",
+      type = "button",
+      ...props
+    },
+    ref,
+  ) => {
+    return (
+      <button
+        {...props}
+        className={clsx("btn", className, `--${variant}`, `--${size}`)}
+        onClick={onClick}
+        type={type}
+        ref={ref}>
+        {children}
+      </button>
+    );
+    ``;
+  },
+);
