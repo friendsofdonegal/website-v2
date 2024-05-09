@@ -7,20 +7,20 @@ const programs = await getCollection("programs");
 ---
 
 <ContentPageLayout title="Programs">
-    <h1>Programs</h1>
+    <h1 class="text-3xl font-bold tracking-tight sm:text-5xl">Programs</h1>
 
     <div class="grid grid-cols-1 gap-12 pt-8 lg:grid-cols-2">
         {
             programs.map((program) => {
                 return (
                     <ProgramCard image={program.data.image} alt={program.data.name}>
-                        <div class="flex h-full flex-col justify-between px-4 pb-6 pt-4">
+                        <div class="flex h-full flex-col justify-between p-4 px-7 pb-6">
                             <div>
-                                <h2 class="mt-0">{program.data.name}</h2>
-                                <p>{program.data.summary}</p>
+                                <h2 class="mt-2 text-2xl font-bold tracking-tight">{program.data.name}</h2>
+                                <p class="text-gray-500 text-base/relaxed">{program.data.summary}</p>
                             </div>
-                            <div>
-                                <Link href={`/programs/${program.slug.slice(3)}`}>Learn More</Link>
+                            <div class="my-3">
+                                <Link className="tracking-tight" href={`/programs/${program.slug.slice(3)}`}>Learn More</Link>
                             </div>
                         </div>
                     </ProgramCard>

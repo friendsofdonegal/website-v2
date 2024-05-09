@@ -27,7 +27,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
     return (
       <button
         {...props}
-        className={clsx("btn", className, `--${variant}`, `--${size}`)}
+        className={clsx("btn", `--${variant}`, `--${size}`, className)}
         onClick={onClick}
         type={type}
         ref={ref}>

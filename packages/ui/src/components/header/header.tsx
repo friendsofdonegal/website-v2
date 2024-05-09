@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           ))}
         </ul>
         {donateButton ?? (
-          <Button className="hidden md:inline" variant="tertiary">
+          <Button className="hidden tracking-tight md:inline" variant="tertiary">
             Donate
           </Button>
         )}
@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = (props) => {
         <div className="header__mobile-menu">
           <ul>
             {menuItems?.map((item, id) => (
-              <NavMenuItem key={`id-${id}`} path={item.path}>
+              <NavMenuItem className="tracking-tight" key={`id-${id}`} path={item.path}>
                 {item.label}
               </NavMenuItem>
             ))}
