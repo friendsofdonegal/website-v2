@@ -16,5 +16,6 @@
     "tailwindCSS.experimental.classRegex": [
       ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
     ],
-    "codevoid.inner-loop-buddy.defaultUrl": "http://localhost:4321"
+    "codevoid.inner-loop-buddy.defaultUrl": "http://localhost:4321",
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
