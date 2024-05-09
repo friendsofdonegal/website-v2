@@ -11,7 +11,7 @@
   "devDependencies": {
     "@fod/tsconfig": "workspace:*",
     "astro": "^4.7.1",
-    "eslint": "^8.57.0",
+    "eslint": "^9.2.0",
     "prettier": "^3.2.5",
     "turbo": "latest"
   },
