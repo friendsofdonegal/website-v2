@@ -19,7 +19,9 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
     <div className="header">
       <div className="header__content">
-        <a href="/">{logo}</a>
+        <a aria-label="Navigate to Home" href="/">
+          {logo}
+        </a>
         <ul className="mx-12 flex-grow justify-end gap-x-12 md:flex md:flex-row">
           {menuItems?.map((item, id) => (
             <NavMenuItem className="hidden md:inline" key={`id-${id}`} path={item.path}>

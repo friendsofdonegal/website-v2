@@ -1,41 +1,45 @@
 import { Button } from "../button/button";
 
 interface MenuButtonProps {
-    className?: string;
-    isOpen: boolean;
-    onClick: () => void;
+  className?: string;
+  isOpen: boolean;
+  onClick: () => void;
 }
 
 export const MenuButton: React.FC<MenuButtonProps> = (props) => {
-    const { className, isOpen, onClick } = props;
+  const { className, isOpen, onClick } = props;
 
-    return (
-        <Button className={className} variant="tertiary" onClick={onClick}>
-            {!isOpen ? (
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="h-6 w-6">
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                    />
-                </svg>
-            ) : (
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="h-6 w-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            )}
-        </Button>
-    );
+  return (
+    <Button
+      aria-label="Toggle Menu Button"
+      className={className}
+      variant="tertiary"
+      onClick={onClick}>
+      {!isOpen ? (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="h-6 w-6">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      ) : (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="h-6 w-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      )}
+    </Button>
+  );
 };
