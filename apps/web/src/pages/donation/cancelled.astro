@@ -1,0 +1,15 @@
+---
+import { Link } from "@fod/ui/components";
+import Paragraph from "@components/Paragraph.astro";
+import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
+---
+
+<ContentPageLayout title="Donation Cancelled">
+  <h1>Donation Cancelled</h1>
+  <Paragraph>
+    Please contact us with any questions or if you are unsure how your donation would be put to use.
+    <br />
+    <br />
+    <Link href={`/contact`} className="no-underline">Contact Us</Link>
+  </Paragraph>
+</ContentPageLayout>
