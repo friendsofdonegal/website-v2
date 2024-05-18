@@ -1,4 +1,5 @@
 ---
+import Paragraph from "@components/Paragraph.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import ContentPageLayout from "src/layouts/ContentPageLayout.astro";
@@ -7,52 +8,50 @@ const boardMembers = await getCollection("board-members");
 
 <ContentPageLayout title="About Us">
   <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl">About Us</h1>
-  <p class="text-gray-500 text-xl">
+  <Paragraph>
     Friends of Donegal was formed in 2021 by a group of community members to address the needs of
     families in the Donegal Community.
-  </p>
+  </Paragraph>
   <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Our Core Values</h2>
   <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Equity</h3>
-  <p class="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+  <Paragraph>
     We believe everyone should be seen, heard, valued, and empowered to succeed. We work to change
     practices, structures, and policies to realize equity for everyone.
-  </p>
+  </Paragraph>
 
   <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Making Sustainable Change</h3>
-  <p class="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+  <Paragraph>
     We are committed to the economic security of all people. Unlike systems that create and maintain
     disparities, we adopt approaches that meet the individual's needs the way they experience social
     problems.
-  </p>
+  </Paragraph>
 
   <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Persistent</h3>
-  <p class="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+  <Paragraph>
     We understand to make sustainable change we must pursue our goals even when it is difficult or
     opposed by others. We are driven to think and do what is best for those in need in our
     community.
-  </p>
+  </Paragraph>
 
   <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Opportunity</h3>
-  <p class="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+  <Paragraph>
     We work with others to create the circumstances for members of our community to thrive.
-  </p>
+  </Paragraph>
 
   <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">With</h3>
-  <p class="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-    We are here to walk with you, team with you and celebrate with you.
-  </p>
+  <Paragraph> We are here to walk with you, team with you and celebrate with you. </Paragraph>
 
   <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Empathy</h3>
-  <p class="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+  <Paragraph>
     We are genuinely interested in the emotional state of others and engage with those emotions to
     compassionately take action.
-  </p>
+  </Paragraph>
 
   <h3 class="pt-6 text-xl font-bold tracking-tighter sm:text-3xl">Relationships</h3>
-  <p class="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-    We build connections between people and organizations, founded in mutual respect,
-    to work together to bring about change.
-  </p>
+  <Paragraph>
+    We build connections between people and organizations, founded in mutual respect, to work
+    together to bring about change.
+  </Paragraph>
   <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Meet Our Board of Directors</h2>
   {
     boardMembers.map((member) => (
@@ -74,9 +73,7 @@ const boardMembers = await getCollection("board-members");
               {member.data.name}
               {member.data.boardTitle && ` - ${member.data.boardTitle}`}
             </h3>
-            <p class="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {member.body}
-            </p>
+            <Paragraph>{member.body}</Paragraph>
           </div>
         </div>
         <hr />
