@@ -20,7 +20,6 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -28,18 +27,47 @@ const { title } = Astro.props;
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BQ8BE3S0G5"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+    <meta
+      name="description"
+      content="Harnessing the collective power and influence of the community to improve the lives of our neighbors in the Donegal Community. Together we promote hope and equity for all."
+    />
+    <meta name="keywords" content="Friends of Donegal, Donegal, Community, Nonprofit, Charity, food insecuirty, homelessness, poverty" />
 
-    gtag("config", "G-BQ8BE3S0G5");
-  </script>
+    <meta property="og:url" content="http://friendsofdonegal.org" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Friends of Donegal" />
+    <meta
+      property="og:description"
+      content="Harnessing the collective power and influence of the community to improve the lives of our neighbors in the Donegal Community. Together we promote hope and equity for all."
+    />
+    <meta property="og:image" content="https://friendsofdonegal.org/fod-og.png" />
+    <meta property="og:image:width" " content="1200" />
+    <meta property="og:image:height" " content="630" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="friendsofdonegal.org" />
+    <meta property="twitter:url" content="http://friendsofdonegal.org" />
+    <meta name="twitter:title" content="Friends of Donegal" />
+    <meta
+      name="twitter:description"
+      content="Harnessing the collective power and influence of the community to improve the lives of our neighbors in the Donegal Community. Together we promote hope and equity for all."
+    />
+    <meta name="twitter:image" content="https://friendsofdonegal.org/fod-og.png" />
+
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BQ8BE3S0G5"
+    ></script><script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-BQ8BE3S0G5");
+    </script></head
+  >
+  <!-- Google tag (gtag.js) -->
+
   <body>
     <Header
       client:load
